@@ -22,12 +22,12 @@ useNewUrlParser: true
   process.exit();
 });
 // define a root/default route
-app.get('/', (req, res) => {
+app.get('/radha', (req, res) => {
    res.json({"message": "Hello World"});
 });
-const userRoutes = require('./src/routes/user.routes')
+const rootRouter = require('./src/routes')
 // using as middleware
-app.use('/api/users', userRoutes)
+app.use('', rootRouter)
 // listen for requests
 app.listen(port, () => {
    console.log(`Node server is listening on port ${port}`);
